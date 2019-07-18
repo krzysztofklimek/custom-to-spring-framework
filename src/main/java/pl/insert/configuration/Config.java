@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.support.TransactionTemplate;
 import pl.insert.dao.UserDao;
 import pl.insert.dao.UserDaoImpl;
+import pl.insert.service.UserService;
 
 //import java.util.logging.LoggingPermission;
 
@@ -23,6 +24,13 @@ import pl.insert.dao.UserDaoImpl;
 public class Config {
 
     //Logger logger = LoggerFactory.getLogger(this.getClass().getName());
+
+
+
+    @Bean(name="userService")
+    public UserService userService(){
+        return new UserService();
+    }
 
 
     @Bean(name="userDao")

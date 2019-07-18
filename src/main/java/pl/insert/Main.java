@@ -5,44 +5,47 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import pl.insert.configuration.Config;
 import pl.insert.dao.UserDao;
 import pl.insert.model.User;
+import pl.insert.service.UserService;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    public static void main (String [] args){
+
+//    @Transactional
+//    public static void addUser(UserDao userDao, User user){
+//        userDao.persist(user);
+//        throw new RuntimeException("Wycofujemy zmiany");
+//    }
 
 
 
-        //ApplicationContext applicationContext = new ClassPathXmlApplicationContext(Config.class);
+    public static void main (String [] args) throws InterruptedException {
+
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(Config.class);
-        UserDao userDao = (UserDao) applicationContext.getBean("userDao", UserDao.class);
+
+        //UserDao userDao = (UserDao) applicationContext.getBean("userDao", UserDao.class);
+        final UserService userService = applicationContext.getBean("userService", UserService.class);
 
 
-        //--------------------dodawanie do bazy
         User user = new User();
-        user.setName("spring");
-        user.setSurname("spring");
-        userDao.persist(user);
+        user.setName("name");
+        user.setSurname("surname");
 
+        //userService.addUserWithMandatory(user);
 
-        //--------------------wyświetlanie całej listy
-        List<User> users = new ArrayList<User>();
-        users = (List<User>) userDao.getUsersList();
-        System.out.println(users);
+        //userService.addUserWithNested(user);
 
-        //--------------------wyszukiwaqnie użytkownika
-        User userById = userDao.getUserById((long) 5);
-        System.out.println(userById);
+        //userService.addUserWithNever(user);
 
-        //--------------------usuwanie użytkownika
-        User userToDelete = new User();
-        userToDelete.setId(120);
-        //userToDelete.setName("spring");
-        //userToDelete.setSurname("Security");
-        userDao.deleteUser(userToDelete);
+        //userService.addUserWithRequired(user);
 
+        //userService.addUserWithRequired(user);
 
+        userService.addUserWithRequiresNew(user);
+
+        //userService.addUserWithSupports(user);
     }
 
 
