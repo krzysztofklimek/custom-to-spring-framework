@@ -1,0 +1,66 @@
+package pl.insert.configuration;
+
+
+
+import javax.persistence.ValidationMode;
+
+
+import org.hibernate.cfg.beanvalidation.BeanValidationIntegrator;
+import org.springframework.context.annotation.*;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.support.TransactionTemplate;
+import pl.insert.dao.UserDao;
+import pl.insert.dao.UserDaoImpl;
+
+//import java.util.logging.LoggingPermission;
+
+
+@Configuration
+@EnableTransactionManagement
+public class Config {
+
+    //Logger logger = LoggerFactory.getLogger(this.getClass().getName());
+
+
+    @Bean(name="userDao")
+    public UserDao userDao(){
+        return new UserDaoImpl();
+    }
+
+
+    @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+        //logger.info("entityManagerFactory - initialization started");
+        LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
+        entityManagerFactoryBean.setPersistenceUnitName("MOL_SQL");
+        entityManagerFactoryBean.getJpaPropertyMap().put(BeanValidationIntegrator.MODE_PROPERTY, ValidationMode.NONE);
+
+
+
+        return entityManagerFactoryBean;
+    }
+
+
+
+    @Primary
+    @Bean
+    public PlatformTransactionManager transactionManager() {
+        //logger.info("transactionManager - initialization started");
+        JpaTransactionManager transactionManager = new JpaTransactionManager(entityManagerFactory().getObject());
+        transactionManager.setRollbackOnCommitFailure(true);
+        return transactionManager;
+    }
+
+    // opcjonalnie
+    @Bean
+    public TransactionTemplate transactionTemplate(PlatformTransactionManager transactionManager) {
+        return new TransactionTemplate(transactionManager);
+    }
+
+
+}
+
+
