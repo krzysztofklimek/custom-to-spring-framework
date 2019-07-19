@@ -1,17 +1,26 @@
 package pl.insert.service;
 
+import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.EnableLoadTimeWeaving;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.*;
 import pl.insert.dao.UserDao;
 import pl.insert.model.User;
 
 
+
 import java.util.List;
+
 
 public class UserService {
 
     @Autowired
-    UserDao userDao;
+    private UserDao userDao;
+
+    @Autowired
+    private UserService _this;
 
 
     @Transactional
@@ -22,59 +31,80 @@ public class UserService {
 
     @Transactional
     public void addUserWithMandatory(User user){
-        nestedAddUserWithMandatory(user);
-        //userDao.persistWithMandatory(user);
+        _this.selfInvocationAddUserWithMandatory(user);
         throw new RuntimeException("wycofuje zmiany");
     }
 
     @Transactional(propagation = Propagation.MANDATORY)
-    public void nestedAddUserWithMandatory(User user){
+    public void selfInvocationAddUserWithMandatory(User user){
         userDao.persist(user);
     }
 
     @Transactional
     public void addUserWithNested(User user){
-        userDao.persistWithNested(user);
+        _this.selfInvocationAddUserWithNested(user);
         throw new RuntimeException("");
+    }
+
+    @Transactional
+    public void selfInvocationAddUserWithNested(User user){
+        userDao.persist(user);
     }
 
     @Transactional
     public void addUserWithNever(User user){
-        userDao.persistWithNever(user);
+        _this.selfInvocationAddUserWithNever(user);
         throw new RuntimeException("");
+    }
+
+    @Transactional
+    public void selfInvocationAddUserWithNever(User user){
+        userDao.persist(user);
     }
 
     @Transactional(propagation = Propagation.NOT_SUPPORTED)
     public void addUserWithNotSupported(User user){
-        userDao.persistWithNotSupported(user);
+        _this.selfInvocationAddUserWithNotSupported(user);
         throw new RuntimeException("");
     }
 
     @Transactional
+    public void selfInvocationAddUserWithNotSupported(User user){
+        userDao.persist(user);
+    }
+
+    @Transactional
     public void addUserWithRequired(User user){
-        userDao.persistWithRequired(user);
+        _this.selfInvocationAddUserWithRequired(user);
         throw new RuntimeException("Wycofujemy zmiany");
     }
 
+    @Transactional
+    public void selfInvocationAddUserWithRequired(User user){
+        userDao.persist(user);
+    }
 
 
-    tutaj
     @Transactional
     public void addUserWithRequiresNew(User user){
-        nestedAddUserWithRequiresNew(user);
-        //userDao.persistWithRequiresNew(user);
+        _this.nestedAddUserWithRequiresNew(user);
         throw new RuntimeException("Użytkownik doda się pomimo wyjątku");
     }
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void nestedAddUserWithRequiresNew(User user){
-        this.userDao.persist(user);
+        userDao.persist(user);
     }
 
     @Transactional
     public void addUserWithSupports(User user){
-        userDao.persistWithSupports(user);
+        _this.selfInvocationAddUserWithSupports(user);
         throw new RuntimeException("");
+    }
+
+    @Transactional
+    public void selfInvocationAddUserWithSupports(User user){
+        userDao.persist(user);
     }
 
 
@@ -85,16 +115,50 @@ public class UserService {
         userDao.deleteUser(user);
     }
 
-    @Transactional
+    //@Transactional
     public List<?> getUserList(){
         List <?> users = userDao.getUsersList();
         return users;
     }
 
-    @Transactional(isolation = Isolation.SERIALIZABLE)
-    public List<?> getUserListWithSerializable(){
-        List <?> users = userDao.getUsersList();
-        return users;
+
+    public void updateUser(long id, String surname){
+        userDao.updateUserSurname(id, surname);
+    }
+
+    @Transactional
+    public int readUserTwice() throws InterruptedException {
+
+        int firstSize, secondSize;
+
+        firstSize = userDao.getUsersList().size();
+        System.out.println(firstSize);
+        Thread.sleep(3000);
+        secondSize = userDao.getUsersList().size();
+        System.out.println(secondSize);
+
+        return secondSize - firstSize;
+    }
+
+    @Transactional
+    public int addUserTwice() throws InterruptedException {
+
+
+        User user = new User();
+        user.setName("dirtyReads");
+        user.setSurname("dirtyReads");
+
+        userDao.persist(user);
+        Thread.sleep(3000);
+
+
+        User user2 = new User();
+        user.setName("dirtyReads");
+        user.setSurname("dirtyReads");
+
+        userDao.persist(user2);
+
+        return userDao.getUsersList().size();
     }
 
 }

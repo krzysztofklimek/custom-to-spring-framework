@@ -1,15 +1,19 @@
+//https://codete.com/blog/5-common-spring-transactional-pitfalls/
+
 package pl.insert;
 
+import org.springframework.cglib.proxy.Enhancer;
+import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import pl.insert.configuration.Config;
-import pl.insert.dao.UserDao;
 import pl.insert.model.User;
 import pl.insert.service.UserService;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class Main {
 
@@ -29,9 +33,14 @@ public class Main {
         final UserService userService = applicationContext.getBean("userService", UserService.class);
 
 
+
+
         User user = new User();
-        user.setName("name");
+        user.setName("AspectJ");
         user.setSurname("surname");
+
+        userService.updateUser(123, "asdasdasdasdasdasdasdasdasd");
+
 
         //userService.addUserWithMandatory(user);
 
@@ -43,7 +52,7 @@ public class Main {
 
         //userService.addUserWithRequired(user);
 
-        userService.addUserWithRequiresNew(user);
+        //userService.addUserWithRequiresNew(user);
 
         //userService.addUserWithSupports(user);
     }
