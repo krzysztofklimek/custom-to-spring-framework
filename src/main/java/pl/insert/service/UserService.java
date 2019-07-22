@@ -1,5 +1,8 @@
 package pl.insert.service;
 
+import org.hibernate.annotations.OptimisticLock;
+import org.hibernate.annotations.OptimisticLockType;
+import org.hibernate.annotations.OptimisticLocking;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -10,10 +13,10 @@ import pl.insert.dao.UserDao;
 import pl.insert.model.User;
 
 
-
+import java.util.ArrayList;
 import java.util.List;
 
-
+@Service
 public class UserService {
 
     @Autowired
@@ -26,6 +29,12 @@ public class UserService {
     @Transactional
     public void addUser(User user){
         userDao.persist(user);
+    }
+
+    @Transactional
+    public User findUserById(Long id){
+        User user = userDao.getUserById(id);
+        return user;
     }
 
 
@@ -121,8 +130,8 @@ public class UserService {
         return users;
     }
 
-
-    public void updateUser(long id, String surname){
+    @Transactional
+    public void updateUserSurname(long id, String surname){
         userDao.updateUserSurname(id, surname);
     }
 
@@ -159,6 +168,31 @@ public class UserService {
         userDao.persist(user2);
 
         return userDao.getUsersList().size();
+    }
+
+    @Transactional
+    public boolean findUserValueTwice(long id) throws InterruptedException {
+
+        User userOne = userDao.getUserById(id);
+        String surnameOne = userOne.getSurname();
+
+        Thread.sleep(3000);
+
+
+//        String surnameTwo = null;
+//
+//        List<User> users = new ArrayList<>();
+//        users = (List<User>) userDao.getUsersList();
+//        for(User u :users){
+//            if(u.getId()==id)
+//                surnameTwo = u.getSurname();
+//        }
+
+
+        User userTwo = userDao.getSecondUserById(id);
+        String surnameTwo = userTwo.getSurname();
+
+        return surnameOne.equals(surnameTwo);
     }
 
 }

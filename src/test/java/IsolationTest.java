@@ -1,3 +1,5 @@
+//https://chlebik.wordpress.com/2013/10/24/entity-manager-i-okolice-czesc-2/
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +11,7 @@ import pl.insert.configuration.Config;
 import pl.insert.model.User;
 import pl.insert.service.UserService;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {Config.class}, loader = AnnotationConfigContextLoader.class)
@@ -97,11 +98,42 @@ public class IsolationTest {
 
 
         assertEquals(size + 1, result[1]);
+    }
 
+
+    @Test
+    public void nonRepetableReads() throws InterruptedException {
+
+        final boolean[] result = new boolean[1];
+
+        Thread thread1 = new Thread(){
+            public void run(){
+
+
+                try {
+                    result[0] = userService.findUserValueTwice(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+
+        Thread thread2 = new Thread(){
+            public void run(){
+                userService.updateUserSurname(1, "11111");
+            }
+        };
+
+        thread1.start();
+        Thread.sleep(1000);
+        thread2.start();
+        Thread.sleep(5000);
+
+        assertTrue(result[0]);
 
 
     }
-
 
 
 

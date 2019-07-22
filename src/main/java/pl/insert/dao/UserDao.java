@@ -11,6 +11,7 @@ public interface UserDao {
 
     List<?> getUsersList();
     User getUserById(Long userId);
+    User getSecondUserById(Long userId);
     void deleteUser(User user);
     void updateUserSurname(long id, String surname);
 

@@ -36,10 +36,12 @@ public class Main {
 
 
         User user = new User();
-        user.setName("AspectJ");
+        user.setName("nameTwo");
         user.setSurname("surname");
 
-        userService.updateUser(123, "asdasdasdasdasdasdasdasdasd");
+        userService.addUser(user);
+
+        //userService.updateUser(123, "asdasdasdasdasdasdasdasdasd");
 
 
         //userService.addUserWithMandatory(user);

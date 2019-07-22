@@ -1,0 +1,7 @@
+pl\insert\configuration\Config.class
+pl\insert\service\UserService.class
+pl\insert\dao\UserDaoImpl.class
+pl\insert\dao\UserDao.class
+pl\insert\model\User.class
+pl\insert\controller\UserRestController.class
+pl\insert\configuration\MvcWebConfig.class

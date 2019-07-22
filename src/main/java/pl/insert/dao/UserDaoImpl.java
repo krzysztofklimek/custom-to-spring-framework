@@ -5,6 +5,7 @@ import pl.insert.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.List;
 
 public class UserDaoImpl implements UserDao {
@@ -28,9 +29,16 @@ public class UserDaoImpl implements UserDao {
 
     public User getUserById(Long userId) {
         User user = entityManager.find(User.class, Long.valueOf(userId));
+        //entityManager.flush();
+        //entityManager.clear();
+        //entityManager.close();
         return user;
     }
 
+    public User getSecondUserById(Long userId){
+        User user = entityManager.find(User.class, Long.valueOf(userId));
+        return user;
+    }
 
 
     public void deleteUser(User user) {
@@ -40,19 +48,13 @@ public class UserDaoImpl implements UserDao {
 
 
     public void updateUserSurname(long id, String surname){
-        User user = entityManager.find(User.class, id);
-
-        System.out.println(user);
-//        entityManager.createQuery("update User set surname = :surname where id = :id")
-//                .setParameter("surname", surname)
-//                .setParameter("id", id)
-//                .executeUpdate();
-
-        user.setSurname(surname);
-//        entityManager.merge(user);
-
-
+        Query query = entityManager.createQuery("update User set surname = :surname where id = :id");
+        query.setParameter("surname", surname);
+        query.setParameter("id", id);
+        query.executeUpdate();
     }
+
+
 
 
 

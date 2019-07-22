@@ -1,11 +1,15 @@
 package pl.insert.model;
 
 
+import org.hibernate.annotations.OptimisticLockType;
+import org.hibernate.annotations.OptimisticLocking;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name="USERS")
+//@OptimisticLocking(type = OptimisticLockType.NONE)
 public class User implements Serializable {
 
 
