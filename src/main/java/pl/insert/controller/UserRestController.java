@@ -28,7 +28,7 @@ public class UserRestController {
     private UserService userService;
 
 
-    @RequestMapping(value = "/")//, method = RequestMethod.GET)
+    @RequestMapping(value = "/users-list")//, method = RequestMethod.GET)
     @ResponseBody
     public List<User> helloWorld(){
         List<User> users = (List<User>) userService.getUserList();
