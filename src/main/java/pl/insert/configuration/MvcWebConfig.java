@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.support.TransactionTemplate;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
@@ -26,6 +27,7 @@ import javax.persistence.ValidationMode;
 
 @Configuration
 @EnableWebMvc
+@EnableTransactionManagement
 @ComponentScan("pl.insert.controller")
 public class MvcWebConfig implements WebMvcConfigurer {
 
