@@ -26,6 +26,9 @@ public class Owner implements Serializable {
     @Column(name = "PASSWORD")
     private String password;
 
+    @Column(name = "ENABLED")
+    private boolean enabled;
+
 
     public long getId() {
         return id;
@@ -65,5 +68,18 @@ public class Owner implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    @Override
+    public String toString(){
+        return this.id + " | " + this.name + " | " + this.surname + " | " + this.email + " | " + this.password;
     }
 }

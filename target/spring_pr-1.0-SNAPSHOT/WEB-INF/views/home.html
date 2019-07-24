@@ -22,16 +22,16 @@
 
             <br><h3>Log in</h3>
 
-            <form  method="POST" enctype="utf8">
+            <form  action = "/spring_pr_war_exploded/"  method="POST" enctype="utf8">
 
                 <div>
-                    <input type="email" id="loginInput" placeholder="Enter email"/>
+                    <input type="text" name = "username" id="loginInput" placeholder="Enter email"/>
                 </div>
                 <div>
-                    <input type="password"  id="loginInput" placeholder="Enter password"/>
+                    <input type="password" name = "password" id="loginInput" placeholder="Enter password"/>
                 </div>
 
-                <button type="submit" id="loginSubmit">Log in</button>
+                <input type="submit" id="loginSubmit" value="Log in">
             </form>
 
 
@@ -57,7 +57,7 @@
 
             <br><h3>Create a new account</h3>
 
-            <form action="/spring_pr_war_exploded/register"  th:object="${owner}" method="POST" enctype="utf8">
+            <form action="/spring_pr_war_exploded/register"  th:object="${ownerDto}" method="POST" enctype="utf8">
                 <div>
                     <input th:field="*{name}" id="registrationInput" type="text" placeholder="Enter first name"/>
                 </div>
@@ -72,7 +72,7 @@
                     <input th:field="*{password}" id="registrationInput" type="password" placeholder="Enter password"/>
                 </div>
                 <div>
-                    <input id="registrationInput" type="password" placeholder="Confirm password"/>
+                    <input th:field="*{confirmPassword}" id="registrationInput" type="password" placeholder="Confirm password"/>
                 </div>
 
                 <button type="submit" id="registrationSubmit">Sign up</button>

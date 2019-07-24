@@ -18,11 +18,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
+import pl.insert.dao.OwnerDao;
+import pl.insert.dao.OwnerDaoImpl;
 import pl.insert.dao.UserDao;
 import pl.insert.dao.UserDaoImpl;
+import pl.insert.service.OwnerService;
 import pl.insert.service.UserService;
 
 import javax.persistence.ValidationMode;
+import javax.servlet.ServletContext;
 
 @Configuration
 @EnableWebMvc
@@ -41,6 +46,16 @@ public class MvcWebConfig implements WebMvcConfigurer {
     @Bean(name="userDao")
     public UserDao userDao(){
         return new UserDaoImpl();
+    }
+
+    @Bean(name="ownerService")
+    public OwnerService ownerService(){
+        return new OwnerService();
+    }
+
+    @Bean(name="ownerDao")
+    public OwnerDao OwnerDao(){
+        return new OwnerDaoImpl();
     }
 
 
@@ -86,6 +101,19 @@ public class MvcWebConfig implements WebMvcConfigurer {
         return templateResolver;
     }
 
+
+//    @Bean
+//    @Description("Thymeleaf Template Resolver")
+//    public ServletContextTemplateResolver templateResolver() {
+//        ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
+//        templateResolver.setPrefix("/WEB-INF/views/");
+//        templateResolver.setSuffix(".html");
+//        //templateResolver.setTemplateMode("HTML5");
+//
+//        return templateResolver;
+//    }
+
+
     @Bean
     public SpringTemplateEngine templateEngine(){
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
@@ -104,6 +132,13 @@ public class MvcWebConfig implements WebMvcConfigurer {
         registry.viewResolver(viewResolver);
     }
 
+//    @Bean
+//    @Description("Spring Message Resolver")
+//    public ResourceBundleMessageSource messageSource() {
+//        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+//        messageSource.setBasename("messages");
+//        return messageSource;
+//    }
 
 
     @Override

@@ -6,6 +6,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <class>pl.insert.model.User</class>
+        <class>pl.insert.model.Owner</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
 
