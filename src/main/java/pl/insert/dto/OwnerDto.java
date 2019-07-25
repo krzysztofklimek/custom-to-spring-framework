@@ -1,30 +1,28 @@
 package pl.insert.dto;
 
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.*;
+;
 
 public class OwnerDto {
 
 
 
-    @NotNull
     @NotEmpty
     private String name;
 
-    @NotNull
     @NotEmpty
     private String surname;
 
-    @NotNull
+
     @NotEmpty
     private String email;
 
-    @NotNull
+
     @NotEmpty
     private String password;
 
-    @NotNull
+
     @NotEmpty
     private String confirmPassword;
 
