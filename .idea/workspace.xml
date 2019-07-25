@@ -7,33 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f87850a4-7759-4e73-874b-8f78b18bc59b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/insert/configuration/SpringSecurityInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/insert/configuration/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/insert/dto/OwnerDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/spring_pr_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/spring_pr_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0e31be4c-c3fd-4631-b043-f8fedb798266.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0e31be4c-c3fd-4631-b043-f8fedb798266.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/insert/configuration/AMvcWebApplicationInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/insert/configuration/AMvcWebApplicationInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/insert/configuration/MvcWebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/insert/configuration/MvcWebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/insert/configuration/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/insert/configuration/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/insert/controller/OwnerHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/insert/controller/OwnerHomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/insert/model/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/insert/model/Owner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/HelloWorld.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/HelloWorld.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/insert/configuration/AMvcWebApplicationInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/insert/configuration/AMvcWebApplicationInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/insert/configuration/MvcWebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/insert/configuration/MvcWebConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/insert/configuration/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/insert/configuration/WebSecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/insert/controller/OwnerHomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/insert/controller/OwnerHomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/insert/model/Owner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/insert/model/Owner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring_pr-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring_pr-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring_pr-1.0-SNAPSHOT/WEB-INF/classes/pl/insert/configuration/AMvcWebApplicationInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring_pr-1.0-SNAPSHOT/WEB-INF/classes/pl/insert/configuration/AMvcWebApplicationInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring_pr-1.0-SNAPSHOT/WEB-INF/classes/pl/insert/configuration/MvcWebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring_pr-1.0-SNAPSHOT/WEB-INF/classes/pl/insert/configuration/MvcWebConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring_pr-1.0-SNAPSHOT/WEB-INF/classes/pl/insert/configuration/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring_pr-1.0-SNAPSHOT/WEB-INF/classes/pl/insert/configuration/WebSecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring_pr-1.0-SNAPSHOT/WEB-INF/classes/pl/insert/controller/OwnerHomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring_pr-1.0-SNAPSHOT/WEB-INF/classes/pl/insert/controller/OwnerHomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring_pr-1.0-SNAPSHOT/WEB-INF/classes/pl/insert/model/Owner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring_pr-1.0-SNAPSHOT/WEB-INF/classes/pl/insert/model/Owner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring_pr-1.0-SNAPSHOT/WEB-INF/views/HelloWorld.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring_pr-1.0-SNAPSHOT/WEB-INF/views/HelloWorld.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring_pr-1.0-SNAPSHOT/WEB-INF/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring_pr-1.0-SNAPSHOT/WEB-INF/views/home.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -88,11 +71,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/dao/UserDao.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/configuration/WebSecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="874">
+              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,21 +84,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/controller/OwnerHomeController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/configuration/AMvcWebApplicationInitializer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-378">
-              <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/configuration/WebSecurityConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
+            <state relative-caret-position="425">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#467#468#0" expanded="true" />
+                <element signature="e#503#504#0" expanded="true" />
+                <element signature="e#716#717#0" expanded="true" />
+                <element signature="e#756#757#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -124,10 +101,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/model/Owner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="72" column="32" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
+            <state relative-caret-position="340">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1268#1269#0" expanded="true" />
                 <element signature="e#1298#1299#0" expanded="true" />
               </folding>
             </state>
@@ -135,19 +113,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/HelloWorld.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+            <state relative-caret-position="170">
+              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -155,7 +124,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="das://0e31be4c-c3fd-4631-b043-f8fedb798266/schema/mvn_db/table/owners">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="b8404fa3-c041-4f98-85f7-484e3cb14c11">
+            <state projectRestartId="f80e6b26-680a-49d4-8a92-e475c5c8f223">
               <filtering>
                 <filter text="" />
               </filtering>
@@ -220,12 +189,12 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/insert/service/OwnerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/insert/configuration/MvcWebConfig.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fail.html" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/insert/configuration/AMvcWebApplicationInitializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/insert/configuration/SpringSecurityInitializer.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.html" />
         <option value="$PROJECT_DIR$/src/main/java/pl/insert/model/Owner.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/insert/controller/OwnerHomeController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/HelloWorld.html" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/insert/controller/OwnerHomeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/insert/configuration/AMvcWebApplicationInitializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/insert/configuration/WebSecurityConfig.java" />
       </list>
     </option>
@@ -259,7 +228,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -427,6 +395,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -440,7 +409,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3932322" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -635,6 +604,9 @@
       <workItem from="1563863501354" duration="25647000" />
       <workItem from="1563948802785" duration="25314000" />
       <workItem from="1563979066069" duration="1875000" />
+      <workItem from="1564035236191" duration="7086000" />
+      <workItem from="1564043351971" duration="139000" />
+      <workItem from="1564043525019" duration="3405000" />
     </task>
     <servers />
   </component>
@@ -671,7 +643,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146515000" />
+    <option name="totallyTimeSpent" value="157145000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -686,7 +658,7 @@
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.29424307" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.23720682" />
       <window_info id="Structure" order="1" sideWeight="0.50180507" side_tool="true" weight="0.1988273" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" sideWeight="0.50180507" side_tool="true" weight="0.1988273" />
@@ -697,7 +669,7 @@
       <window_info id="Web" order="8" sideWeight="0.50180507" side_tool="true" weight="0.1988273" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3211111" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.12666667" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.7644445" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -721,7 +693,7 @@
       <window_info anchor="right" id="Database" order="6" visible="true" weight="0.13272922" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.07835821" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -892,20 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/configuration/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#902#903#0" expanded="true" />
-            <element signature="e#942#943#0" expanded="true" />
-            <element signature="e#1000#1001#0" expanded="true" />
-            <element signature="e#1040#1041#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -985,22 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/configuration/MvcWebConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1212">
-          <caret line="101" column="5" lean-forward="true" selection-start-line="100" selection-start-column="32" selection-end-line="101" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1824#1825#0" expanded="true" />
-            <element signature="e#1864#1865#0" expanded="true" />
-            <element signature="e#1921#1922#0" expanded="true" />
-            <element signature="e#1961#1962#0" expanded="true" />
-            <element signature="e#2033#2034#0" expanded="true" />
-            <element signature="e#2074#2075#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/service/OwnerService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -1027,38 +969,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/configuration/AMvcWebApplicationInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
-          <folding>
-            <element signature="e#362#363#0" expanded="true" />
-            <element signature="e#397#398#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/configuration/SpringSecurityInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="72" lean-forward="true" selection-start-line="4" selection-start-column="72" selection-end-line="4" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2567">
           <caret line="151" column="21" selection-start-line="151" selection-start-column="21" selection-end-line="151" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1098,51 +1012,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/model/Owner.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="72" column="32" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
+        <state relative-caret-position="289">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1298#1299#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="52" />
+        <state relative-caret-position="291">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/model/Owner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1268#1269#0" expanded="true" />
+            <element signature="e#1298#1299#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/HelloWorld.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        <state relative-caret-position="170">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/configuration/MvcWebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="101" column="5" lean-forward="true" selection-start-line="100" selection-start-column="32" selection-end-line="101" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1824#1825#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1921#1922#0" expanded="true" />
+            <element signature="e#1961#1962#0" expanded="true" />
+            <element signature="e#2033#2034#0" expanded="true" />
+            <element signature="e#2074#2075#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/configuration/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#902#903#0" expanded="true" />
+            <element signature="e#942#943#0" expanded="true" />
+            <element signature="e#1000#1001#0" expanded="true" />
+            <element signature="e#1040#1041#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="das://0e31be4c-c3fd-4631-b043-f8fedb798266/schema/mvn_db/table/owners">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="b8404fa3-c041-4f98-85f7-484e3cb14c11">
+        <state projectRestartId="f80e6b26-680a-49d4-8a92-e475c5c8f223">
           <filtering>
             <filter text="" />
           </filtering>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/configuration/SpringSecurityInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="72" lean-forward="true" selection-start-line="4" selection-start-column="72" selection-end-line="4" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/configuration/AMvcWebApplicationInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#467#468#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#716#717#0" expanded="true" />
+            <element signature="e#756#757#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/controller/OwnerHomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-378">
-          <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
+        <state relative-caret-position="124">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/insert/configuration/WebSecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
+        <state relative-caret-position="874">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1160,7 +1138,6 @@
             <option name="proportions">
               <list>
                 <option value="0.3932322" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1203,12 +1180,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>spring_pr</last-edited>
+          <last-edited>Spring|spring_pr</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.3932322" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
