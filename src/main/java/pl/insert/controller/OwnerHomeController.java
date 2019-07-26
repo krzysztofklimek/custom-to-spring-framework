@@ -15,6 +15,8 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import pl.insert.dto.OwnerDto;
+import pl.insert.exception.EmailExistsException;
+import pl.insert.exception.NotMatchingPassword;
 import pl.insert.model.Owner;
 import pl.insert.service.OwnerService;
 
@@ -32,7 +34,7 @@ public class OwnerHomeController {
 
 
     @RequestMapping(value = {"/", "/register"}, method = RequestMethod.GET)
-    public String home(WebRequest request, Model model){
+    public String home(WebRequest request, Model model) {
         OwnerDto ownerDto = new OwnerDto();
         model.addAttribute("ownerDto", ownerDto);
 
@@ -40,89 +42,49 @@ public class OwnerHomeController {
     }
 
 
-    @RequestMapping(value="/register", method = RequestMethod.POST)
-    public ModelAndView register(@Valid @ModelAttribute OwnerDto ownerFromForm, BindingResult bindingResult){
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public ModelAndView register(@Valid @ModelAttribute OwnerDto ownerDto, BindingResult bindingResult) {
+
+        Owner owner = null;
 
 //        if (bindingResult.hasErrors()) {
 //            return "add";
 //        }
 
 
-        if(bindingResult.hasErrors())
-            return new ModelAndView("home", "ownerDto", ownerFromForm);
-            //System.out.println(bindingResult.getAllErrors().toString());
-
-        else {
-
-            OwnerDto ownerDto = new OwnerDto();
-            ownerDto.setName(ownerFromForm.getName());
-            ownerDto.setSurname(ownerFromForm.getSurname());
-            ownerDto.setEmail(ownerFromForm.getEmail());
-            ownerDto.setPassword(ownerFromForm.getPassword());
-            ownerDto.setConfirmPassword(ownerFromForm.getConfirmPassword());
+        if (bindingResult.hasErrors())
+            return new ModelAndView("home", "ownerDto", ownerDto);
 
 
-            Owner owner = new Owner();
-            owner.setName(ownerDto.getName());
-            owner.setSurname(ownerDto.getSurname());
-            owner.setEmail(ownerDto.getEmail());
-            owner.setPassword(passwordEncoder.encode(ownerDto.getPassword()));
-            owner.setEnabled(true);
+        else{
+            try {
+                owner = ownerService.createValidatedOwner(ownerDto);
+            } catch (NotMatchingPassword notMatchingPassword) {
+                bindingResult.rejectValue("confirmPassword", "error.owner", "do not match");
+            } catch (EmailExistsException e) {
+                bindingResult.rejectValue("email", "error.owner", "is already used");
+            }
 
-            ownerService.addOwner(owner);
+            if (bindingResult.hasErrors())
+                return new ModelAndView("home", "ownerDto", ownerDto);
 
-
-            return new ModelAndView("home", "ownerDto", ownerFromForm);
+            else{
+                ownerService.addOwner(owner);
+                return new ModelAndView("home", "ownerDto", ownerDto);
+            }
         }
+
 
     }
 
 
-
-
-
-//    @RequestMapping(value="/register", method = RequestMethod.POST)
-//    public String register(@Valid @ModelAttribute OwnerDto ownerFromForm, BindingResult bindingResult){
-//
-////        if (bindingResult.hasErrors()) {
-////            return "add";
-////        }
-//
-//
-//        if(bindingResult.hasErrors())
-//            System.out.println(bindingResult.getAllErrors().toString());
-//
-//        else {
-//
-//            OwnerDto ownerDto = new OwnerDto();
-//            ownerDto.setName(ownerFromForm.getName());
-//            ownerDto.setSurname(ownerFromForm.getSurname());
-//            ownerDto.setEmail(ownerFromForm.getEmail());
-//            ownerDto.setPassword(ownerFromForm.getPassword());
-//            ownerDto.setConfirmPassword(ownerFromForm.getConfirmPassword());
-//
-//
-//            Owner owner = new Owner();
-//            owner.setName(ownerDto.getName());
-//            owner.setSurname(ownerDto.getSurname());
-//            owner.setEmail(ownerDto.getEmail());
-//            owner.setPassword(passwordEncoder.encode(ownerDto.getPassword()));
-//            owner.setEnabled(true);
-//
-//            ownerService.addOwner(owner);
-//
-//        }
-//
-//        return "home";
-//    }
-
-    @RequestMapping(value="/hello-world")
-    public String helloWorld(){
+    @RequestMapping(value = "/hello-world")
+    public String helloWorld() {
         return "HelloWorld";
     }
 
-    @RequestMapping(value="/fail")
-    public String fail(){
+    @RequestMapping(value = "/fail")
+    public String fail() {
         return "fail";
     }
 

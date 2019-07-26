@@ -8,6 +8,7 @@ public interface OwnerDao {
 
     void persist(Owner owner);
     Owner getOwnerById(Long userId);
+    Owner findOwnerByEmail(String email);
 
 
 

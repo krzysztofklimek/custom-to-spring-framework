@@ -12,14 +12,14 @@
 #leftHalf{
     width: 50vw;
     height: 100vh;
-    background-color: #4183fe;
+    background-color: #f18973;
     float: left;
 }
 
 #rightHalf{
     width: 50vw;
     height: 100vh;
-    background-color: #f18973;
+    background-color: #4183fe;
     float: left;
 }
 
@@ -83,4 +83,10 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+#registrationErrorText{
+    margin: 5px 0 0 0;
+    font-size:80%;
+    /*color:red;*/
 }

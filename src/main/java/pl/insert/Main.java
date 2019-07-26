@@ -7,7 +7,9 @@ import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import pl.insert.configuration.Config;
+import pl.insert.configuration.WebSecurityConfig;
 import pl.insert.model.User;
+import pl.insert.service.OwnerService;
 import pl.insert.service.UserService;
 
 import javax.transaction.Transactional;
@@ -28,35 +30,28 @@ public class Main {
     public static void main (String [] args) throws InterruptedException {
 
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(Config.class);
+//        //UserDao userDao = (UserDao) applicationContext.getBean("userDao", UserDao.class);
+//        final UserService userService = applicationContext.getBean("userService", UserService.class);
 
-        //UserDao userDao = (UserDao) applicationContext.getBean("userDao", UserDao.class);
-        final UserService userService = applicationContext.getBean("userService", UserService.class);
+        final OwnerService ownerService = applicationContext.getBean("ownerService", OwnerService.class);
+//
+//        User user = new User();
+//        user.setName("nameTwo");
+//        user.setSurname("surname");
+//        userService.addUser(user);
+//
+//        //userService.updateUser(123, "asdasdasdasdasdasdasdasdasd");
+//        //userService.addUserWithMandatory(user);
+//        //userService.addUserWithNested(user);
+//        //userService.addUserWithNever(user);
+//        //userService.addUserWithRequired(user);
+//        //userService.addUserWithRequired(user);
+//        //userService.addUserWithRequiresNew(user);
+//        //userService.addUserWithSupports(user);
 
 
+        System.out.println(ownerService.findOwnerByEmail("a@a"));
 
-
-        User user = new User();
-        user.setName("nameTwo");
-        user.setSurname("surname");
-
-        userService.addUser(user);
-
-        //userService.updateUser(123, "asdasdasdasdasdasdasdasdasd");
-
-
-        //userService.addUserWithMandatory(user);
-
-        //userService.addUserWithNested(user);
-
-        //userService.addUserWithNever(user);
-
-        //userService.addUserWithRequired(user);
-
-        //userService.addUserWithRequired(user);
-
-        //userService.addUserWithRequiresNew(user);
-
-        //userService.addUserWithSupports(user);
     }
 
 

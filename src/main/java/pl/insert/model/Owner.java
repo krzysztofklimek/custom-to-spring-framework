@@ -80,6 +80,6 @@ public class Owner implements Serializable {
 
     @Override
     public String toString(){
-        return this.id + " | " + this.name + " | " + this.surname + " | " + this.email + " | " + this.password;
+        return this.id + " | " + this.name + " | " + this.surname + " | " + this.email + " | " + this.password + " | " + this.enabled;
     }
 }
