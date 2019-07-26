@@ -1,0 +1,8 @@
+<view-state id="order">
+    <transition on="summary" to="orderSummary"/>
+    <transition on="back" to="orderBack"/>
+</view-state>
+
+<view-state id="orderSummary" />
+
+<view-state id="orderBack" />

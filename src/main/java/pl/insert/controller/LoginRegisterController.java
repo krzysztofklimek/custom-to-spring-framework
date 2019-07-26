@@ -6,14 +6,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.context.request.WebRequest;
 
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import pl.insert.dto.OwnerDto;
 import pl.insert.exception.EmailExistsException;
 import pl.insert.exception.NotMatchingPassword;
@@ -24,7 +22,7 @@ import javax.validation.Valid;
 
 
 @Controller
-public class OwnerHomeController {
+public class LoginRegisterController {
 
     @Autowired
     private OwnerService ownerService;
@@ -46,11 +44,6 @@ public class OwnerHomeController {
     public ModelAndView register(@Valid @ModelAttribute OwnerDto ownerDto, BindingResult bindingResult) {
 
         Owner owner = null;
-
-//        if (bindingResult.hasErrors()) {
-//            return "add";
-//        }
-
 
         if (bindingResult.hasErrors())
             return new ModelAndView("home", "ownerDto", ownerDto);

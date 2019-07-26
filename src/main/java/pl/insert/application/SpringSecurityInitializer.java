@@ -1,4 +1,4 @@
-package pl.insert.configuration;
+package pl.insert.application;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
