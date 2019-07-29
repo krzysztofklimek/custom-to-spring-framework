@@ -6,11 +6,14 @@
 </head>
 <body>
 
-hello world <br>
+<h1>hello world</h1> <br><br>
 
-<form action = "/spring_pr_war_exploded/start-order">
-    <button type="submit" >Start order</button>
+
+<form method="post" th:action="@{/orderFlow}">
+    <button type="submit" value="newOrderOne"/>Create new order</button>
 </form>
+
+<br><br>
 
 <a th:href="@{/logout}">Logout</a>
 </body>

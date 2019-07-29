@@ -15,7 +15,7 @@ import java.util.Collections;
 public class WebFlowConfig extends AbstractFlowConfiguration {
 
     @Autowired
-    private MvcWebConfig mvcWebConfig;
+    private WebMvcConfig webMvcConfig;
 
     @Bean
     public FlowDefinitionRegistry flowRegistry() {
@@ -40,7 +40,7 @@ public class WebFlowConfig extends AbstractFlowConfiguration {
     public MvcViewFactoryCreator mvcViewFactoryCreator() {
         MvcViewFactoryCreator factoryCreator = new MvcViewFactoryCreator();
         factoryCreator.setViewResolvers(
-                Collections.singletonList(this.mvcWebConfig.viewResolver()));
+                Collections.singletonList(this.webMvcConfig.viewResolver()));
         factoryCreator.setUseSpringBeanBinding(true);
         return factoryCreator;
     }

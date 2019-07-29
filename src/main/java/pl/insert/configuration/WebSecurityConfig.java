@@ -72,6 +72,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/")
                 .permitAll()
                 .failureUrl("/fail")
+                //.defaultSuccessUrl("/hello-world", true)
                 .defaultSuccessUrl("/hello-world", true)
 
                 .and()

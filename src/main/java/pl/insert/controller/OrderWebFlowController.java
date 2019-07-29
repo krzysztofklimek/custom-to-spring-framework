@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class OrderWebFlowController {
 
 
-    @RequestMapping(value="start-order")
-    public String startOrder(){
-        return "startOrder";
-    }
+//    @RequestMapping(value="start-order")
+//    public String startOrder(){
+//        return "startOrder";
+//    }
 
 
 

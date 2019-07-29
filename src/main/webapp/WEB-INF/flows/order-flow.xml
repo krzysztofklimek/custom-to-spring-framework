@@ -1,8 +1,31 @@
-<view-state id="order">
-    <transition on="summary" to="orderSummary"/>
-    <transition on="back" to="orderBack"/>
-</view-state>
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow.xsd">
 
-<view-state id="orderSummary" />
 
-<view-state id="orderBack" />
+    <var name="orderDto" class="pl.insert.dto.OrderDto"/>
+
+
+
+    <view-state id="createNewOrderOne" model="orderDto">
+        <transition on="next" to="createNewOrderTwo"/>
+        <transition on="back" to="HelloWorld"/>
+    </view-state>
+
+
+    <view-state id="createNewOrderTwo" model="orderDto">
+        <transition on="nextToSubmit" to="orderSubmit"/>
+        <transition on="backToOne" to="createNewOrderOne"/>
+    </view-state>
+
+
+    <view-state id="orderSubmit" model="orderDto">
+        <transition on="confirm" to="HelloWorld"/>
+        <transition on="backToTwo" to="createNewOrderTwo"/>
+    </view-state>
+
+    <view-state id="HelloWorld"/>
+
+</flow>
