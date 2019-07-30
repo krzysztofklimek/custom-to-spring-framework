@@ -21,10 +21,8 @@ import org.springframework.webflow.mvc.servlet.FlowHandlerMapping;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
-import pl.insert.dao.OwnerDao;
-import pl.insert.dao.OwnerDaoImpl;
-import pl.insert.dao.UserDao;
-import pl.insert.dao.UserDaoImpl;
+import pl.insert.dao.*;
+import pl.insert.service.OrderService;
 import pl.insert.service.OwnerService;
 import pl.insert.service.UserService;
 
@@ -62,6 +60,16 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Bean(name="ownerDao")
     public OwnerDao OwnerDao(){
         return new OwnerDaoImpl();
+    }
+
+    @Bean(name="orderService")
+    public OrderService orderService(){
+        return new OrderService();
+    }
+
+    @Bean(name="orderDao")
+    public OrderDao orderDao(){
+        return new OrderDaoImpl();
     }
 
 

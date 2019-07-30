@@ -1,18 +1,32 @@
-package pl.insert.dto;
-
-import org.hibernate.validator.constraints.*;
-
-import java.io.Serializable;
-
-public class OrderDto implements Serializable {
+package pl.insert.model;
 
 
-    @NotEmpty(message = "Username cannot be empty")
+import javax.persistence.*;
+
+@Entity
+@Table(name = "ORDERS")
+public class Order {
+
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name = "ID")
+    private long id;
+
+    @Column(name= "FIRST_NAME")
     private String firstName;
 
-    @NotEmpty(message = "Username cannot be empty")
+    @Column(name = "SECOND_NAME")
     private String secondName;
 
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -29,10 +43,4 @@ public class OrderDto implements Serializable {
     public void setSecondName(String secondName) {
         this.secondName = secondName;
     }
-
-    public String toString(){
-        return "first name: " + this.firstName + ", second name: " + this.secondName;
-    }
-
-
 }

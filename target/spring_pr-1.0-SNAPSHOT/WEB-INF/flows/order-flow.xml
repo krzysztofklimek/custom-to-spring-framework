@@ -6,10 +6,19 @@
 
 
     <var name="orderDto" class="pl.insert.dto.OrderDto"/>
+    <var name="orderHandler" class="pl.insert.handler.OrderHandler"/>
+
+
+<!--    <on-start>-->
+<!--        <evaluate expression="orderHandler.init()" result = "flowScope.orderDto" />-->
+<!--    </on-start>-->
 
 
 
-    <view-state id="createNewOrderOne" model="orderDto">
+
+
+
+    <view-state id="createNewOrderOne" model="flowScope.orderDto">
         <transition on="next" to="createNewOrderTwo"/>
         <transition on="back" to="HelloWorld"/>
     </view-state>
@@ -21,10 +30,29 @@
     </view-state>
 
 
+<!--    <view-state id="orderSubmit" model="orderDto">-->
+<!--        <transition on="confirm" to="confirm"/>-->
+<!--        <transition on="backToTwo" to="createNewOrderTwo"/>-->
+<!--    </view-state>-->
+
+<!--    <action-state id="confirm">-->
+<!--        <evaluate expression="orderService.saveOrder(flowScope.orderDto)"/>-->
+<!--        <transition on="success" to="HelloWorld"/>-->
+<!--    </action-state>-->
+
     <view-state id="orderSubmit" model="orderDto">
         <transition on="confirm" to="HelloWorld"/>
         <transition on="backToTwo" to="createNewOrderTwo"/>
+
+        <on-exit>
+            <evaluate expression="orderHandler.saveOrder(orderDto)"/>
+        </on-exit>
+
     </view-state>
+
+
+<!--    <end-state id="HelloWorld"/>-->
+
 
     <view-state id="HelloWorld"/>
 

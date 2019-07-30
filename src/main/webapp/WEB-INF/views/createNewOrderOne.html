@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -12,23 +12,9 @@
 <form method="post" th:object="${orderDto}" th:action="${flowExecutionUrl}">
 
     Enter first name:
-    <input type="text" th:field="*{firstName}" th:value="${firstName}"/>
+    <input class="form-control" type="text" th:field="*{firstName}" />
+    <p class="alert alert-danger" th:errors="*{firstName}" th:if="${#fields.hasErrors('firstName')}"></p>
 
-
-
-<!--    Select color:-->
-<!--    <select name="nazwa">-->
-<!--        <option>black</option>-->
-<!--        <option>blue</option>-->
-<!--        <option>red</option>-->
-<!--        <option>green</option>-->
-<!--    </select>-->
-
-<!--    <br>-->
-
-<!--    Select size:-->
-<!--    <label><input type="checkbox"> big</label>-->
-<!--    <label><input type="checkbox"> small</label>-->
 
     <br><br>
 
