@@ -12,8 +12,9 @@
 <form method="post" th:object="${orderDto}" th:action="${flowExecutionUrl}">
 
 
+    <p th:each="error: ${#fields.errors('firstName')}">*First name must not be empty</p>
+
     <p th:text="'First name:  ' + ${orderDto.firstName}"/>
-    <p class="alert alert-danger" th:errors="*{secondName}" th:if="${#fields.hasErrors('secondName')}"></p>
     <p th:text= "'Second name:  ' + ${orderDto.secondName}"/>
 
     <button type="submit" name="_eventId" value="backToTwo"/>

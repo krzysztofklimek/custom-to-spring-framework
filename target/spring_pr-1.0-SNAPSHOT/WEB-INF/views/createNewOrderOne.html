@@ -13,7 +13,7 @@
 
     Enter first name:
     <input class="form-control" type="text" th:field="*{firstName}" />
-    <p class="alert alert-danger" th:errors="*{firstName}" th:if="${#fields.hasErrors('firstName')}"></p>
+    <p th:each="error: ${#fields.errors('firstName')}">*First name must not be empty</p>
 
 
     <br><br>

@@ -2,7 +2,9 @@ package pl.insert.handler;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.binding.validation.ValidationContext;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import pl.insert.dao.OrderDao;
 import pl.insert.dto.OrderDto;
 import pl.insert.model.Order;
@@ -20,11 +22,10 @@ public class OrderHandler implements Serializable {
     OrderService orderService;
 
 
-    public void saveOrder(@Valid OrderDto orderDto){
+    public void saveOrder(@Valid @ModelAttribute OrderDto orderDto){
 
         OrderDto orderDto1 = new OrderDto();
         orderDto1.setFirstName(orderDto.getFirstName());
-
 
         Order order = new Order();
         order.setFirstName(orderDto.getFirstName());

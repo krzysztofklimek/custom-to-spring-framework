@@ -12,7 +12,7 @@
 <form method="post" th:object="${orderDto}" th:action="${flowExecutionUrl}">
     Enter second name:
     <input type="text" th:field="*{secondName}"/>
-    <p class="alert alert-danger" th:errors="*{secondName}" th:if="${#fields.hasErrors('secondName')}"></p>
+    <p th:each="error: ${#fields.errors('secondName')}">*Second name must not be empty</p>
 
     <br><br>
 
